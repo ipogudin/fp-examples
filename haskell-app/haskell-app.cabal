@@ -1,0 +1,86 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.3.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1c54567571c5ccfde7c3c711bfff0e9ebfc40a80eab066bf41c077374dbb1b2a
+
+name:           haskell-app
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/haskell-app#readme>
+homepage:       https://github.com/githubuser/haskell-app#readme
+bug-reports:    https://github.com/githubuser/haskell-app/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/haskell-app
+
+library
+  exposed-modules:
+      Crawler
+      Lib
+  other-modules:
+      Paths_haskell_app
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson >=1.4.7.0
+    , async ==2.2.2
+    , base >=4.7 && <5
+    , bytestring >=0.10.10.0
+    , case-insensitive >=1.2.1.0
+    , containers >=0.6.2.1
+    , exceptions >=0.10.4
+    , http-client >=0.6.4.1
+    , http-client-tls >=0.3.5.3
+    , http-conduit >=2.3.7.3
+    , http-types >=0.12.3
+    , network-uri >=2.6.3.0
+    , regex >=1.1.0.0
+    , tagsoup ==0.14.8
+    , text >=1.2.4.0
+  default-language: Haskell2010
+
+executable haskell-app-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_app
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson >=1.4.7.0
+    , base >=4.7 && <5
+    , bytestring >=0.10.10.0
+    , containers >=0.6.2.1
+    , exceptions >=0.10.4
+    , haskell-app
+    , http-types ==0.12.3
+    , mtl ==2.2.2
+    , text >=1.2.4.0
+    , wai ==3.2.2.1
+    , warp ==3.3.13
+  default-language: Haskell2010
+
+test-suite haskell-app-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskell_app
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , haskell-app
+  default-language: Haskell2010
